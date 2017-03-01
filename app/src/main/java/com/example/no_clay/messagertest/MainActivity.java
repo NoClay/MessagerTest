@@ -7,12 +7,14 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.no_clay.messagertest.BinderPool.BinderPoolActivity;
 import com.example.no_clay.messagertest.Data.User;
 import com.example.no_clay.messagertest.Item241.BundleActivity;
 import com.example.no_clay.messagertest.Item242.FileActivity;
 import com.example.no_clay.messagertest.Item243.MessengerActivity;
 import com.example.no_clay.messagertest.Item244.BookManagerActivity;
 import com.example.no_clay.messagertest.Item245.BookProviderActivity;
+import com.example.no_clay.messagertest.Item246.SocketActivity;
 import com.example.no_clay.messagertest.Util.MyConstants;
 
 import java.io.FileOutputStream;
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
     TextView mButton2;
     @BindView(R.id.activity_main)
     LinearLayout mActivityMain;
+    @BindView(R.id.button0)
+    TextView mButton0;
+    @BindView(R.id.button3)
+    TextView mButton3;
+    @BindView(R.id.button4)
+    TextView mButton4;
+    @BindView(R.id.button5)
+    TextView mButton5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +49,9 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button0, R.id.button1, R.id.button2, R.id.button3, R.id.button4})
+    @OnClick({R.id.button0, R.id.button1, R.id.button2,
+            R.id.button3, R.id.button4, R.id.button5,
+    R.id.button6})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button0:
@@ -78,6 +90,14 @@ public class MainActivity extends AppCompatActivity {
             case R.id.button4:
                 Intent intent2 = new Intent(this, BookProviderActivity.class);
                 startActivity(intent2);
+                break;
+            case R.id.button5:
+                startActivity(new Intent(this, SocketActivity.class));
+                break;
+            case R.id.button6:{
+                startActivity(new Intent(this, BinderPoolActivity.class));
+                break;
+            }
         }
     }
 }

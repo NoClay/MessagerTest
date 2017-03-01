@@ -61,4 +61,45 @@
         android:layout_height="1dp">
 
     </View>
+    <TextView
+        android:id="@+id/button4"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="利用ContentProvider"/>
+    <View
+        android:background="@color/colorAccent"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+    </View>
+
+    <TextView
+        android:id="@+id/button5"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="利用Socket"/>
+    <View
+        android:background="@color/colorAccent"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+    </View>
+
+    <TextView
+        android:id="@+id/button6"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="利用BinderPool"/>
+    <View
+        android:background="@color/colorAccent"
+        android:layout_margin="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp">
+
+    </View>
 </LinearLayout>

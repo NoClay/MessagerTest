@@ -4,6 +4,13 @@
 
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
+    <permission
+        android:name="com.example.no_clay.messagertest.permission.ACCESS_BOOK_MANAGER_SERVICE"
+        android:protectionLevel="normal">
+    </permission>
 
     <application
         android:name=".Util.MyApplication"
@@ -35,11 +42,37 @@
             android:process=":remote">
         </activity>
 
-        <service android:name=".Item244.BookManagerService"
+        <service
+            android:name=".Item244.BookManagerService"
             android:process="com.example.test">
         </service>
 
         <activity android:name=".Item244.BookManagerActivity">
+        </activity>
+
+        <provider
+            android:name=".Item245.BookProvider"
+            android:authorities="com.example.no_clay.messagertest.BookProvider"
+            android:permission="com.example.no_clay.messagertest.PROVIDER"
+            android:process=":provider"/>
+
+        <activity android:name=".Item245.BookProviderActivity">
+        </activity>
+        <activity android:name=".Item246.SocketActivity">
+        </activity>
+
+        <service
+            android:name=".Item246.TCPService"
+            android:process=":tcp"/>
+
+        <service
+            android:name=".BinderPool.BinderPoolService"
+            android:process=":binderPool"
+            android:enabled="true"
+            android:exported="true">
+        </service>
+
+        <activity android:name=".BinderPool.BinderPoolActivity">
         </activity>
     </application>
 

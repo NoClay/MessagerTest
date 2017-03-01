@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_socket"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.no_clay.messagertest.Item246.SocketActivity">
+
+    <EditText
+        android:id="@+id/input"
+        android:hint="请输入"
+        android:gravity="top|left"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"/>
+
+    <Button
+        android:id="@+id/send"
+        android:text="发送"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/receive"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>
