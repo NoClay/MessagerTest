@@ -34,6 +34,7 @@ public class BookManagerActivity extends AppCompatActivity {
         public void onServiceConnected(ComponentName name, IBinder service) {
             IBookManager bookManager = IBookManager.Stub.asInterface(service);
             try {
+                mBookManager.asBinder().linkToDeath(mRecipient, 0);
                 mBookManager = bookManager;
                 bookManager.registerListener(listener);
                 List<Book> list = bookManager.getBookList();
@@ -76,5 +77,17 @@ public class BookManagerActivity extends AppCompatActivity {
         super.onDestroy();
     }
 
+    private IBinder.DeathRecipient mRecipient = new IBinder.DeathRecipient() {
+        @Override
+        public void binderDied() {
+            if (mBookManager != null){
+                mBookManager.asBinder().unlinkToDeath(mRecipient, 0);
+                mBookManager = null;
+                Intent intent = new Intent(BookManagerActivity.this
+                        , BookManagerService.class);
+                bindService(intent, mServiceConnection, Context.BIND_AUTO_CREATE);
+            }
+        }
+    };
 
 }

@@ -17,6 +17,9 @@ public class Book implements Parcelable{
         this.id = id;
     }
 
+    public Book() {
+    }
+
     public String getName() {
         return name;
     }

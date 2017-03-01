@@ -12,6 +12,7 @@ import com.example.no_clay.messagertest.Item241.BundleActivity;
 import com.example.no_clay.messagertest.Item242.FileActivity;
 import com.example.no_clay.messagertest.Item243.MessengerActivity;
 import com.example.no_clay.messagertest.Item244.BookManagerActivity;
+import com.example.no_clay.messagertest.Item245.BookProviderActivity;
 import com.example.no_clay.messagertest.Util.MyConstants;
 
 import java.io.FileOutputStream;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
     }
 
-    @OnClick({R.id.button0, R.id.button1, R.id.button2, R.id.button3})
+    @OnClick({R.id.button0, R.id.button1, R.id.button2, R.id.button3, R.id.button4})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.button0:
@@ -74,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 break;
+            case R.id.button4:
+                Intent intent2 = new Intent(this, BookProviderActivity.class);
+                startActivity(intent2);
         }
     }
 }

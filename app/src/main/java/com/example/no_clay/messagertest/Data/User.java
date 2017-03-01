@@ -21,6 +21,9 @@ public class User implements Serializable, Parcelable{
         this.id = id;
     }
 
+    public User() {
+    }
+
     public String getName() {
         return name;
     }

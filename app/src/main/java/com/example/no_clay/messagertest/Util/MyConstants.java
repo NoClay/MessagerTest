@@ -13,4 +13,5 @@ public class MyConstants {
             .getAbsolutePath()
             + "/cache/";
     public static final String CACHE_FILE_PATH = CACHE_PATH + "cacheData";
+    public static final String PACKAGE_NAME = "com.example.no_clay.messagertest";
 }
